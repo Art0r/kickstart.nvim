@@ -234,6 +234,7 @@ require('lazy').setup({
   'nvim-tree/nvim-tree.lua',
   'nvim-tree/nvim-web-devicons',
   'smzm/hydrovim',
+  'alvan/vim-closetag',
   -- NOTE: Plugins can also be added by using a table,
   -- with the first argument being the link and the following
   -- keys can be used to configure plugin behavior/loading/etc.
@@ -1072,3 +1073,13 @@ require('nvim-web-devicons').setup {
 }
 
 -- NERD ICONS
+
+-- HTML
+vim.g.closetag_filenames = '*.html,*.xhtml,*.phtml'
+vim.g.closetag_xhtml_filenames = '*.xhtml,*.jsx'
+vim.g.closetag_filetypes = 'html,xhtml,phtml'
+vim.g.closetag_xhtml_filetypes = 'xhtml,jsx'
+vim.g.closetag_emptyTags_caseSensitive = 1
+vim.g.closetag_shortcut = '>'
+vim.g.closetag_close_shortcut = '<leader>>'
+-- HTML
