@@ -87,8 +87,8 @@ P.S. You can delete this when you're done too. It's your config now! :)
 -- Set <space> as the leader key
 -- See `:help mapleader`
 --  NOTE: Must happen before plugins are loaded (otherwise wrong leader will be used)
-vim.g.mapleader = ' '
-vim.g.maplocalleader = ' '
+vim.g.mapleader = '\\'
+vim.g.maplocalleader = '\\'
 
 -- Set to true if you have a Nerd Font installed and selected in the terminal
 vim.g.have_nerd_font = true
@@ -683,7 +683,7 @@ require('lazy').setup({
     cmd = { 'ConformInfo' },
     keys = {
       {
-        '<leader>f',
+        '<neader>f',
         function()
           require('conform').format { async = true, lsp_format = 'fallback' }
         end,
@@ -972,14 +972,14 @@ require('lazy').setup({
 -- vim: ts=2 sts=2 sw=2 et
 
 -- CUSTOM MAPPINGS
+vim.api.nvim_set_keymap('n', '<leader>w', ':NvimTreeToggle<CR>', { noremap = true })
+vim.api.nvim_set_keymap('n', '<leader>q', ':NvimTreeFocus<CR>', { noremap = true })
 -- CUSTOM MAPPINGS
 
 -- NERD TREE CONFIGS
 -- disable netrw at the very start of your init.lua
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
-vim.api.nvim_set_keymap('n', '<C-e>', ':NvimTreeToggle<CR>', { noremap = true })
-vim.api.nvim_set_keymap('n', '<C-t>', ':NvimTreeFocus<CR>', { noremap = true })
 
 -- optionally enable 24-bit colour
 vim.opt.termguicolors = true
